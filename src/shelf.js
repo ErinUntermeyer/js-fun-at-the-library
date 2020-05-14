@@ -5,9 +5,11 @@ function shelfBook(book, scifiShelf) {
 };
 
 function unshelfBook(bookTitle, scifiShelf) {
+  var bookTitles = '';
+  var bookIndex = null;
   for (i = 0; i < scifiShelf.length; i++) {
-    var bookTitles = scifiShelf[i].title
-    var bookIndex = scifiShelf.indexOf(scifiShelf[i]);
+    bookTitles = scifiShelf[i].title
+    bookIndex = scifiShelf.indexOf(scifiShelf[i]);
     if (bookTitles === bookTitle) {
       scifiShelf.splice(bookIndex, 1)
     }

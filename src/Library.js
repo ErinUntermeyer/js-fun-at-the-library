@@ -10,18 +10,22 @@ function createLibrary(libName) {
   return library;
 };
 
+// function addBook(library, book) {
+//   var fantShelf = library.shelves.fantasy;
+//   var nonFicShelf = library.shelves.nonFiction;
+//   var ficShelf = library.shelves.fiction;
+//   var bookGenre = book.genre;
+//   if (bookGenre === "fantasy") {
+//     fantShelf.push(book);
+//   } else if (bookGenre === "nonFiction") {
+//     nonFicShelf.push(book);
+//   } else if (bookGenre === "fiction") {
+//     ficShelf.push(book);
+//   }
+// };
+
 function addBook(library, book) {
-  var fantShelf = library.shelves.fantasy;
-  var nonFicShelf = library.shelves.nonFiction;
-  var ficShelf = library.shelves.fiction;
-  var bookGenre = book.genre;
-  if (bookGenre === "fantasy") {
-    fantShelf.push(book);
-  } else if (bookGenre === "nonFiction") {
-    nonFicShelf.push(book);
-  } else if (bookGenre === "fiction") {
-    ficShelf.push(book);
-  }
+  library.shelves[book.genre].push(book)
 };
 
 function checkoutBook(library, bookTitle) {
